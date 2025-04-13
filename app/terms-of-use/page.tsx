@@ -137,7 +137,8 @@ export default function TermsOfUse() {
             <p>If you have any questions about these Terms, please contact us:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>By email: eugeorgerubim@gmail.com</li>
-              <li>By phone: +55 92 8152-9639</li>
+              <li>By whatsapp: +55 92 8152-9639</li>
+              <li>By phone: +55 92 99365-4905</li>
               <li>CNPJ: 59.494.073/0001-20</li>
               <li>By mail: Rua Criciuma 31B Apt 31B, Alvorada, Manaus - AM, 69043-140</li>
             </ul>

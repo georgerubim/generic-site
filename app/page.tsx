@@ -272,6 +272,8 @@ export default function Home() {
                   <h3 className="text-white/90 font-medium mb-1">Telefone</h3>
                   <a href="tel:+5592981529639" className="text-white/60 hover:text-white transition-colors">
                     +55 92 8152-9639
+                    <br />
+                    +55 92 99365-4905
                   </a>
                 </div>
                 <div>

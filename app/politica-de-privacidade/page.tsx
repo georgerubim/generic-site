@@ -151,7 +151,8 @@ export default function PrivacyPolicy() {
             <p>Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato conosco:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Por e-mail: eugeorgerubim@gmail.com</li>
-              <li>Por telefone: +55 92 8152-9639</li>
+              <li>Por whatsapp: +55 92 8152-9639</li>
+              <li>Por telefone: +55 92 99365-4905</li>
               <li>CNPJ: 59.494.073/0001-20</li>
               <li>Por correio: Rua Criciuma 31B Apt 31B, Alvorada, Manaus - AM, 69043-140</li>
             </ul>
