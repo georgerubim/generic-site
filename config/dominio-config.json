@@ -34,5 +34,23 @@
                 "zipCode": "69043-140"
             }
         }
+    },
+    "eugeorgerubim.com": {
+        "siteInfo": {
+            "name": "George Rubim"
+        },
+        "contactInfo": {
+            "email": "eugeorgerubim@gmail.com",
+            "whatsapp": "+55 92 8152-9639",
+            "phone": "+55 92 99365-4905",
+            "cnpj": "59.494.073/0001-20",
+            "address": {
+                "street": "Rua Criciuma 31B Apt 31B",
+                "neighborhood": "Alvorada",
+                "city": "Manaus",
+                "state": "AM",
+                "zipCode": "69043-140"
+            }
+        }
     }
 } 
