@@ -14,11 +14,7 @@ function extractMainDomain(host: string): string {
         return withoutWww
     }
     
-    // Para outros domínios, pega apenas o domínio principal
-    const parts = withoutWww.split('.')
-    if (parts.length > 2) {
-        return parts.slice(-2).join('.')
-    }
+
     
     return withoutWww
 }
