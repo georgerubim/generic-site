@@ -70,5 +70,23 @@
                 "zipCode": "57045-780"
             }
         }
+    },
+    "e1isabe1.site": {
+        "siteInfo": {
+            "name": "Paulo Ricardo"
+        },
+        "contactInfo": {
+            "email": "adriellegrasel23@gmail.com",
+            "whatsapp": "+55 54 99714-8147",
+            "phone": "+55 54 99714-8147",
+            "cnpj": "59.494.068/0001-17",
+            "address": {
+                "street": "Rua Nei Messias 83",
+                "neighborhood": "Cohab C",
+                "city": "Gravataí",
+                "state": "RS",
+                "zipCode": "94030-060"
+            }
+        }
     }
 } 
