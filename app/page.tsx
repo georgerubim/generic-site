@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import DynamicFrameLayout from "../components/DynamicFrameLayout"
 import { ppEditorialNewUltralightItalic, inter } from "./fonts"
@@ -7,13 +5,15 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ArrowRight } from "lucide-react"
+import { getCurrentDomain } from "./dominio"
 
-export default function Home() {
-  const [headerSize] = useState(1.2) // 120% is the default size
-  const [textSize] = useState(0.8) // 80% is the default size
-  const [menuOpen, setMenuOpen] = useState(false)
+export default async function Home() {
+  const headerSize = 1.2 // 120% is the default size
+  const textSize = 0.8 // 80% is the default size
+  const menuOpen = false
 
-  const toggleMenu = () => setMenuOpen(!menuOpen)
+  const currentDomain = await getCurrentDomain()
+
 
   return (
     <div
@@ -26,7 +26,7 @@ export default function Home() {
             <Image src="/placeholder.svg?height=40&width=40" alt="Logo Prisma Agency" fill className="object-contain" />
           </div>
           <span className={`${ppEditorialNewUltralightItalic.className} text-2xl font-light italic text-white/90`}>
-            George Rubim
+            George Rubim {currentDomain}
           </span>
         </Link>
 
@@ -45,7 +45,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <button onClick={toggleMenu} className="md:hidden text-white/70 hover:text-white">
+        <button  className="md:hidden text-white/70 hover:text-white">
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
@@ -56,28 +56,28 @@ export default function Home() {
           <Link
             href="#about"
             className="text-white/70 hover:text-white py-4 text-2xl border-b border-white/10"
-            onClick={toggleMenu}
+            
           >
             Sobre
           </Link>
           <Link
             href="#services"
             className="text-white/70 hover:text-white py-4 text-2xl border-b border-white/10"
-            onClick={toggleMenu}
+            
           >
             Serviços
           </Link>
           <Link
             href="#work"
             className="text-white/70 hover:text-white py-4 text-2xl border-b border-white/10"
-            onClick={toggleMenu}
+            
           >
             Trabalhos
           </Link>
           <Link
             href="#contact"
             className="text-white/70 hover:text-white py-4 text-2xl border-b border-white/10"
-            onClick={toggleMenu}
+            
           >
             Contato
           </Link>
