@@ -1,19 +1,17 @@
-import { useState } from "react"
 import DynamicFrameLayout from "../components/DynamicFrameLayout"
 import { ppEditorialNewUltralightItalic, inter } from "./fonts"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ArrowRight } from "lucide-react"
-import { getCurrentDomain } from "./dominio"
+import { getSiteConfig } from "./dominio"
 
 export default async function Home() {
   const headerSize = 1.2 // 120% is the default size
   const textSize = 0.8 // 80% is the default size
   const menuOpen = false
-
-  const currentDomain = await getCurrentDomain()
-
+  const siteConfig = await getSiteConfig()
+  const { siteInfo, contactInfo } = siteConfig
 
   return (
     <div
@@ -26,7 +24,7 @@ export default async function Home() {
             <Image src="/placeholder.svg?height=40&width=40" alt="Logo Prisma Agency" fill className="object-contain" />
           </div>
           <span className={`${ppEditorialNewUltralightItalic.className} text-2xl font-light italic text-white/90`}>
-            George Rubim {currentDomain}
+            {siteInfo.name}
           </span>
         </Link>
 
@@ -108,7 +106,7 @@ export default async function Home() {
                   className={`${inter.className} text-white/60 text-base font-light max-w-[400px]`}
                   style={{ fontSize: `${1 * textSize}rem` }}
                 >
-                  George Rubim é um designer criativo especializado em identidade de marca, design digital e
+                  {siteInfo.name} é um designer criativo especializado em identidade de marca, design digital e
                   experiências imersivas. Combina estratégia, design e tecnologia para criar conexões significativas
                   entre marcas e seus públicos.
                 </p>
@@ -264,30 +262,30 @@ export default async function Home() {
               <div className="space-y-4">
                 <div>
                   <h3 className="text-white/90 font-medium mb-1">Email</h3>
-                  <a href="mailto:eugeorgerubim@gmail.com" className="text-white/60 hover:text-white transition-colors">
-                    eugeorgerubim@gmail.com
+                  <a href={`mailto:${contactInfo.email}`} className="text-white/60 hover:text-white transition-colors">
+                    {contactInfo.email}
                   </a>
                 </div>
                 <div>
                   <h3 className="text-white/90 font-medium mb-1">Telefone</h3>
-                  <a href="tel:+5592981529639" className="text-white/60 hover:text-white transition-colors">
-                    +55 92 8152-9639
+                  <a href={`tel:${contactInfo.phone}`} className="text-white/60 hover:text-white transition-colors">
+                    {contactInfo.phone}
                     <br />
-                    +55 92 99365-4905
+                    {contactInfo.whatsapp}
                   </a>
                 </div>
                 <div>
                   <h3 className="text-white/90 font-medium mb-1">CNPJ</h3>
-                  <p className="text-white/60">59.494.073/0001-20</p>
+                  <p className="text-white/60">{contactInfo.cnpj}</p>
                 </div>
                 <div>
                   <h3 className="text-white/90 font-medium mb-1">Localização</h3>
                   <p className="text-white/60">
-                    Rua Criciuma 31B Apt 31B
+                    {contactInfo.address.street}
                     <br />
-                    Alvorada, Manaus - AM
+                    {contactInfo.address.neighborhood}, {contactInfo.address.city} - {contactInfo.address.state}
                     <br />
-                    69043-140
+                    {contactInfo.address.zipCode}
                   </p>
                 </div>
               </div>
@@ -355,15 +353,13 @@ export default async function Home() {
               />
             </div>
             <span className={`${ppEditorialNewUltralightItalic.className} text-xl font-light italic text-white/90`}>
-              George Rubim
+              {siteInfo.name}
             </span>
           </div>
 
-
-
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-white/40 text-sm">
-              © {new Date().getFullYear()} George Rubim. Todos os direitos reservados. CNPJ: 59.494.073/0001-20
+              © {new Date().getFullYear()} {siteInfo.name}. Todos os direitos reservados. CNPJ: {contactInfo.cnpj}
             </div>
             <div className="flex items-center gap-6">
               <Link href="/politica-de-privacidade" className="text-white/60 hover:text-white transition-colors">

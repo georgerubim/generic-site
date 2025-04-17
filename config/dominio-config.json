@@ -1,0 +1,38 @@
+{
+    "dominio.com": {
+        "siteInfo": {
+            "name": "Nome do Site"
+        },
+        "contactInfo": {
+            "email": "email@dominio.com",
+            "whatsapp": "+55 00 0000-0000",
+            "phone": "+55 00 0000-0000",
+            "cnpj": "00.000.000/0000-00",
+            "address": {
+                "street": "Rua Exemplo",
+                "neighborhood": "Bairro",
+                "city": "Cidade",
+                "state": "UF",
+                "zipCode": "00000-000"
+            }
+        }
+    },
+    "localhost": {
+        "siteInfo": {
+            "name": "George Rubim"
+        },
+        "contactInfo": {
+            "email": "eugeorgerubim@gmail.com",
+            "whatsapp": "+55 92 8152-9639",
+            "phone": "+55 92 99365-4905",
+            "cnpj": "59.494.073/0001-20",
+            "address": {
+                "street": "Rua Criciuma 31B Apt 31B",
+                "neighborhood": "Alvorada",
+                "city": "Manaus",
+                "state": "AM",
+                "zipCode": "69043-140"
+            }
+        }
+    }
+} 

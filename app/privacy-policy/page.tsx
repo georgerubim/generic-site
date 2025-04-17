@@ -1,14 +1,18 @@
 import Link from "next/link"
 import { ppEditorialNewUltralightItalic, inter } from "../fonts"
+import { getSiteConfig } from "../dominio"
 
-export default function PrivacyPolicy() {
+export default async function PrivacyPolicy() {
+  const siteConfig = await getSiteConfig()
+  const { siteInfo, contactInfo } = siteConfig
+
   return (
     <div className={`min-h-screen bg-[#141414] ${ppEditorialNewUltralightItalic.variable} ${inter.variable}`}>
       {/* Navigation */}
       <nav className="px-8 py-6 flex justify-between items-center bg-[#141414]/80 backdrop-blur-sm border-b border-white/10">
         <Link href="/" className="flex items-center gap-2">
           <span className={`${ppEditorialNewUltralightItalic.className} text-2xl font-light italic text-white/90`}>
-            George Rubim
+            {siteInfo.name}
           </span>
         </Link>
 
@@ -29,9 +33,9 @@ export default function PrivacyPolicy() {
           <section className="space-y-4">
             <h2 className="text-2xl text-white/90 font-medium">1. Introduction</h2>
             <p>
-              At George Rubim ("we," "our," or "us"), we respect your privacy and are committed to protecting your
+              At {siteInfo.name} ("we," "our," or "us"), we respect your privacy and are committed to protecting your
               personal data. This privacy policy explains how we collect, use, and safeguard your information when you
-              visit our website prisma.agency (the "Website").
+              visit our website {siteInfo.name} (the "Website").
             </p>
             <p>
               Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy,
@@ -149,11 +153,11 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl text-white/90 font-medium">8. Contact Us</h2>
             <p>If you have any questions about this Privacy Policy, please contact us:</p>
             <ul className="list-disc pl-6 space-y-2">
-              <li>By email: eugeorgerubim@gmail.com</li>
-              <li>By Whatsapp: +55 92 8152-9639</li>
-              <li>By phone: +55 92 99365-4905</li>
-              <li>CNPJ: 59.494.073/0001-20</li>
-              <li>By mail: Rua Criciuma 31B Apt 31B, Alvorada, Manaus - AM, 69043-140</li>
+              <li>By email: {contactInfo.email}</li>
+              <li>By Whatsapp: {contactInfo.whatsapp}</li>
+              <li>By phone: {contactInfo.phone}</li>
+              <li>CNPJ: {contactInfo.cnpj}</li>
+              <li>By mail: {contactInfo.address.street}, {contactInfo.address.neighborhood}, {contactInfo.address.city} - {contactInfo.address.state}, {contactInfo.address.zipCode}</li>
             </ul>
           </section>
 
@@ -164,7 +168,7 @@ export default function PrivacyPolicy() {
       {/* Footer */}
       <footer className="py-8 px-8 border-t border-white/10">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-white/40 text-sm">© {new Date().getFullYear()} George Rubim. All rights reserved.</div>
+          <div className="text-white/40 text-sm">© {new Date().getFullYear()} {siteInfo.name}. All rights reserved.</div>
           <div className="flex items-center gap-6">
             <Link href="/privacy-policy" className="text-white/60 hover:text-white transition-colors">
               Privacy Policy

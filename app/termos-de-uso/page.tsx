@@ -1,14 +1,18 @@
 import Link from "next/link"
 import { ppEditorialNewUltralightItalic, inter } from "../fonts"
+import { getSiteConfig } from "../dominio"
 
-export default function TermsOfUse() {
+export default async function TermsOfUse() {
+  const siteConfig = await getSiteConfig()
+  const { siteInfo, contactInfo } = siteConfig
+
   return (
     <div className={`min-h-screen bg-[#141414] ${ppEditorialNewUltralightItalic.variable} ${inter.variable}`}>
       {/* Navigation */}
       <nav className="px-8 py-6 flex justify-between items-center bg-[#141414]/80 backdrop-blur-sm border-b border-white/10">
         <Link href="/" className="flex items-center gap-2">
           <span className={`${ppEditorialNewUltralightItalic.className} text-2xl font-light italic text-white/90`}>
-            George Rubim
+            {siteInfo.name}
           </span>
         </Link>
 
@@ -29,7 +33,7 @@ export default function TermsOfUse() {
           <section className="space-y-4">
             <h2 className="text-2xl text-white/90 font-medium">1. Aceitação dos Termos</h2>
             <p>
-              Ao acessar e usar o site da George Rubim (o "Site"), você aceita e concorda em estar vinculado aos termos
+              Ao acessar e usar o site da {siteInfo.name} (o "Site"), você aceita e concorda em estar vinculado aos termos
               e disposições deste acordo. Se você não concordar em cumprir o acima, por favor, não use este Site.
             </p>
           </section>
@@ -37,7 +41,7 @@ export default function TermsOfUse() {
           <section className="space-y-4">
             <h2 className="text-2xl text-white/90 font-medium">2. Direitos de Propriedade Intelectual</h2>
             <p>
-              A menos que declarado de outra forma, a George Rubim e/ou seus licenciadores possuem os direitos de
+              A menos que declarado de outra forma, a {siteInfo.name} e/ou seus licenciadores possuem os direitos de
               propriedade intelectual para todo o material no Site. Todos os direitos de propriedade intelectual são
               reservados. Você pode visualizar e/ou imprimir páginas do Site para seu próprio uso pessoal, sujeito às
               restrições estabelecidas nestes termos e condições.
@@ -61,26 +65,26 @@ export default function TermsOfUse() {
               qualquer finalidade.
             </p>
             <p>
-              Você concede à George Rubim uma licença mundial, irrevogável, não exclusiva, livre de royalties para usar,
+              Você concede à {siteInfo.name} uma licença mundial, irrevogável, não exclusiva, livre de royalties para usar,
               reproduzir, adaptar, publicar, traduzir e distribuir seu Conteúdo do Usuário em qualquer mídia existente
-              ou futura. Você também concede à George Rubim o direito de sublicenciar esses direitos e o direito de
+              ou futura. Você também concede à {siteInfo.name} o direito de sublicenciar esses direitos e o direito de
               mover uma ação por violação desses direitos.
             </p>
             <p>
               Seu Conteúdo do Usuário não deve ser ilegal ou ilícito, não deve infringir os direitos legais de terceiros
-              e não deve ser capaz de dar origem a ação legal contra você ou a George Rubim ou um terceiro (em cada caso
+              e não deve ser capaz de dar origem a ação legal contra você ou a {siteInfo.name} ou um terceiro (em cada caso
               sob qualquer lei aplicável).
             </p>
             <p>
-              A George Rubim reserva-se o direito de editar ou remover qualquer material enviado a este Site, ou
-              armazenado nos servidores da George Rubim, ou hospedado ou publicado neste Site.
+              A {siteInfo.name} reserva-se o direito de editar ou remover qualquer material enviado a este Site, ou
+              armazenado nos servidores da {siteInfo.name}, ou hospedado ou publicado neste Site.
             </p>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl text-white/90 font-medium">4. Sem Garantias</h2>
             <p>
-              Este Site é fornecido "como está", com todas as falhas, e a George Rubim não faz representações ou
+              Este Site é fornecido "como está", com todas as falhas, e a {siteInfo.name} não faz representações ou
               garantias expressas ou implícitas de qualquer tipo relacionadas a este Site ou aos materiais contidos
               neste Site.
             </p>
@@ -90,9 +94,9 @@ export default function TermsOfUse() {
           <section className="space-y-4">
             <h2 className="text-2xl text-white/90 font-medium">5. Limitação de Responsabilidade</h2>
             <p>
-              Em nenhum caso a George Rubim, nem qualquer de seus dirigentes, diretores e funcionários, será responsável
+              Em nenhum caso a {siteInfo.name}, nem qualquer de seus dirigentes, diretores e funcionários, será responsável
               perante você por qualquer coisa decorrente de ou de qualquer forma relacionada ao seu uso deste Site, seja
-              tal responsabilidade sob contrato, ato ilícito ou de outra forma, e a George Rubim, incluindo seus
+              tal responsabilidade sob contrato, ato ilícito ou de outra forma, e a {siteInfo.name}, incluindo seus
               dirigentes, diretores e funcionários, não será responsável por qualquer responsabilidade indireta,
               consequencial ou especial decorrente de ou de qualquer forma relacionada ao seu uso deste Site.
             </p>
@@ -101,7 +105,7 @@ export default function TermsOfUse() {
           <section className="space-y-4">
             <h2 className="text-2xl text-white/90 font-medium">6. Indenização</h2>
             <p>
-              Você por este meio indeniza na extensão mais completa a George Rubim de e contra quaisquer e todas as
+              Você por este meio indeniza na extensão mais completa a {siteInfo.name} de e contra quaisquer e todas as
               responsabilidades, custos, demandas, causas de ação, danos e despesas (incluindo honorários advocatícios
               razoáveis) decorrentes de ou de qualquer forma relacionados à sua violação de qualquer uma das disposições
               destes Termos.
@@ -120,7 +124,7 @@ export default function TermsOfUse() {
           <section className="space-y-4">
             <h2 className="text-2xl text-white/90 font-medium">8. Variação dos Termos</h2>
             <p>
-              A George Rubim tem permissão para revisar estes Termos a qualquer momento conforme achar adequado, e ao
+              A {siteInfo.name} tem permissão para revisar estes Termos a qualquer momento conforme achar adequado, e ao
               usar este Site, espera-se que você revise tais Termos regularmente para garantir que entenda todos os
               termos e condições que regem o uso deste Site.
             </p>
@@ -139,11 +143,11 @@ export default function TermsOfUse() {
             <h2 className="text-2xl text-white/90 font-medium">10. Entre em Contato Conosco</h2>
             <p>Se você tiver alguma dúvida sobre estes Termos, entre em contato conosco:</p>
             <ul className="list-disc pl-6 space-y-2">
-              <li>Por e-mail: eugeorgerubim@gmail.com</li>
-              <li>Por whatsapp: +55 92 8152-9639</li>
-              <li>Por telefone: +55 92 99365-4905</li>
-              <li>CNPJ: 59.494.073/0001-20</li>
-              <li>Por correio: Rua Criciuma 31B Apt 31B, Alvorada, Manaus - AM, 69043-140</li>
+              <li>Por e-mail: {contactInfo.email}</li>
+              <li>Por whatsapp: {contactInfo.whatsapp}</li>
+              <li>Por telefone: {contactInfo.phone}</li>
+              <li>CNPJ: {contactInfo.cnpj}</li>
+              <li>Por correio: {contactInfo.address.street}, {contactInfo.address.neighborhood}, {contactInfo.address.city} - {contactInfo.address.state}, {contactInfo.address.zipCode}</li>
             </ul>
           </section>
 
@@ -155,7 +159,7 @@ export default function TermsOfUse() {
       <footer className="py-8 px-8 border-t border-white/10">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-white/40 text-sm">
-            © {new Date().getFullYear()} George Rubim. Todos os direitos reservados.
+            © {new Date().getFullYear()} {siteInfo.name}. Todos os direitos reservados.
           </div>
           <div className="flex items-center gap-6">
             <Link href="/politica-de-privacidade" className="text-white/60 hover:text-white transition-colors">
