@@ -88,5 +88,23 @@
                 "zipCode": "94030-060"
             }
         }
+    },
+    "adrianoreisdasilva.shop": {
+        "siteInfo": {
+            "name": "ADRIANO REIS DA SILVA"
+        },
+        "contactInfo": {
+            "email": "contato@adrianoreisdasilva.shop",
+            "whatsapp": "+55 11 97329-1239",
+            "phone": "+55 11 97329-1239",
+            "cnpj": "30.935.880/0001-59",
+            "address": {
+                "street": "Avenida Vivaldi, 1206, Apto 12",
+                "neighborhood": "Rudge Ramos",
+                "city": "São Bernardo do Campo",
+                "state": "SP",
+                "zipCode": "109617-000"
+            }
+        }
     }
 } 
