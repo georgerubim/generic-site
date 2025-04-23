@@ -106,5 +106,23 @@
                 "zipCode": "109617-000"
             }
         }
+    },
+    "frcomercioemgeral.shop": {
+        "siteInfo": {
+            "name": "F R Comercio em Geral"
+        },
+        "contactInfo": {
+            "email": "rodrigomaia.broker@gmail.com",
+            "whatsapp": "+55 (45) 99113-6984",
+            "phone": "+55 (45) 99113-6984",
+            "cnpj": "44.681.882/0001-73",
+            "address": {
+                "street": "Rua Lagoa dos Patos 145 Cond Ritz Cataratas",
+                "neighborhood": "Remanso",
+                "city": "Foz do Iguaçu",
+                "state": "PR",
+                "zipCode": "85853-822"
+            }
+        }
     }
 } 
